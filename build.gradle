@@ -12,11 +12,11 @@ java {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
-
+/* OVO OVDJE NESTO SAM ZAKOMENTIRAO
 repositories {
 	mavenCentral()
 }
-
+*/
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
@@ -29,8 +29,10 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	implementation 'com.github.kenglxn.QRGen:javase:2.6.0' //OVO SAM JA DODAO
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
+

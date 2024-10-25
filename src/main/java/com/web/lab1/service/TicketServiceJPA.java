@@ -1,9 +1,14 @@
 package com.web.lab1.service;
 
+
 import com.web.lab1.domain.*;
 import com.web.lab1.repo.*;
+import net.glxn.qrgen.javase.QRCode;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.stereotype.*;
+import javax.imageio.*;
+import java.awt.image.*;
+import java.io.*;
 import java.time.*;
 
 @Service
@@ -28,5 +33,15 @@ public class TicketServiceJPA {
 
     public int countAll() {
         return (int) ticketRepo.count();
+    }
+
+    public BufferedImage generateQRCodeImage(String barcodeText) throws Exception {
+        ByteArrayOutputStream stream = QRCode
+                .from(barcodeText)
+                .withSize(250, 250)
+                .stream();
+        ByteArrayInputStream bis = new ByteArrayInputStream(stream.toByteArray());
+
+        return ImageIO.read(bis);
     }
 }

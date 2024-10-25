@@ -1,8 +1,8 @@
 package com.web.lab1.domain;
 
 import jakarta.persistence.*;
-import org.antlr.v4.runtime.misc.*;
 import org.hibernate.annotations.*;
+import org.springframework.lang.*;
 import java.time.*;
 import java.util.*;
 
@@ -13,16 +13,16 @@ public class Ticket {
     @Id
     private UUID id;
 
-    @NotNull
+    @NonNull
     private Long vatin;
 
-    @NotNull
+    @NonNull
     private String firstName;
 
-    @NotNull
+    @NonNull
     private String lastName;
 
-    @NotNull
+    @NonNull
     private LocalDateTime TicketCreationTime;
 
     public Ticket(UUID id, Long vatin, String firstName, String lastName, LocalDateTime ticketCreationTime) {
