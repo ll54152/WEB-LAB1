@@ -8,7 +8,7 @@ COPY src ./src
 
 RUN ./gradlew clean build -x test
 
-FROM openjdk:21-jdk-alpine
+FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
