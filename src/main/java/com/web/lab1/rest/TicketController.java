@@ -35,13 +35,13 @@ public class TicketController {
     public ResponseEntity<?> generateTicket(@RequestBody TicketDTO ticketDTO) {
         try {
             if (ticketDTO == null) {
-                return new ResponseEntity<>("Invalid input", HttpStatus.BAD_REQUEST);
+                return new ResponseEntity<>("Error Code 400 (Bad Request): Invalid input", HttpStatus.BAD_REQUEST);
             } else if (ticketDTO.getFirstName() == null || ticketDTO.getLastName() == null || ticketDTO.getVatin() == null) {
-                return new ResponseEntity<>("Invalid input", HttpStatus.BAD_REQUEST);
+                return new ResponseEntity<>("Error Code 400 (Bad Request): Invalid input", HttpStatus.BAD_REQUEST);
             } else {
                 String vatin = ticketService.generateTicket(ticketDTO);
                 if (vatin.equals("You have reached the limit of 3 tickets per Person")) {
-                    return new ResponseEntity<>("You have reached the limit of 3 tickets per Person", HttpStatus.BAD_REQUEST);
+                    return new ResponseEntity<>("Error Code 400 (Bad Request): You have reached the limit of 3 tickets per Person", HttpStatus.BAD_REQUEST);
                 }
                 StringBuilder sb = new StringBuilder();
                 sb.append(ServletUriComponentsBuilder.fromCurrentContextPath().toUriString());
