@@ -30,6 +30,8 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'com.github.kenglxn.QRGen:javase:2.6.0' //OVO SAM JA DODAO
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect' //OVO SAM JA DODAO
+	implementation 'com.okta.spring:okta-spring-boot-starter:3.0.5'//OVO SAM JA DODAO
 }
 
 tasks.named('test') {

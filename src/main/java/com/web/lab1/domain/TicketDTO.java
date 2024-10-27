@@ -6,7 +6,6 @@ public class TicketDTO {
     private String firstName;
     private String lastName;
 
-
     public TicketDTO(Long vatin, String firstName, String lastName) {
         this.vatin = vatin;
         this.firstName = firstName;

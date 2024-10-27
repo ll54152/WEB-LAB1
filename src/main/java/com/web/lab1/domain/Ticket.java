@@ -3,7 +3,8 @@ package com.web.lab1.domain;
 import jakarta.persistence.*;
 import org.hibernate.annotations.*;
 import org.springframework.lang.*;
-import java.time.*;
+
+import java.sql.*;
 import java.util.*;
 
 @Entity
@@ -23,9 +24,9 @@ public class Ticket {
     private String lastName;
 
     @NonNull
-    private LocalDateTime TicketCreationTime;
+    private Timestamp TicketCreationTime;
 
-    public Ticket(UUID id, Long vatin, String firstName, String lastName, LocalDateTime ticketCreationTime) {
+    public Ticket(UUID id, Long vatin, String firstName, String lastName, Timestamp ticketCreationTime) {
         this.id = id;
         this.vatin = vatin;
         this.firstName = firstName;
@@ -33,7 +34,7 @@ public class Ticket {
         TicketCreationTime = ticketCreationTime;
     }
 
-    public Ticket(Long vatin, String firstName, String lastName, LocalDateTime ticketCreationTime) {
+    public Ticket(Long vatin, String firstName, String lastName, Timestamp ticketCreationTime) {
         this.vatin = vatin;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -75,11 +76,11 @@ public class Ticket {
         this.lastName = lastName;
     }
 
-    public LocalDateTime getTicketCreationTime() {
+    public Timestamp getTicketCreationTime() {
         return TicketCreationTime;
     }
 
-    public void setTicketCreationTime(LocalDateTime ticketCreationTime) {
+    public void setTicketCreationTime(Timestamp ticketCreationTime) {
         TicketCreationTime = ticketCreationTime;
     }
 }
